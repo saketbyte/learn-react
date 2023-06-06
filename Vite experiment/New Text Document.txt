@@ -1,0 +1,5 @@
+For CRA:
+npx create-react-app app_name
+
+For Vite
+npx create vite@latest

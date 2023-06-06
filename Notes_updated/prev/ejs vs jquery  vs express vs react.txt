@@ -1,7 +1,0 @@
-EJS is embedded JavaScript. You write html, then stick JavaScript right into the page. It’s pretty great for templating simple apps and gets used all the time for things like dynamic embedding of script tags during a build. You build an EJS file and it creates an HTML file. It runs serverside.
-
-Express is a javascript framework, used to work with NodeJS server functionality to create backend APIs, webapps etc.
-
-JQuery is a lovely old DOM manipulation tool. It lets you make point changes to a web page after it’s been loaded into a browser. You might make your html file in EJS, then once the user has downloaded that file into their browser and is viewing it, you might modify it with jQuery to add interactivity. It runs clientside.
-
-React is newer. It does everything jQuery did but in a different way. With React you define components, then you call React.render to push them into the DOM. It’s designed for more complex apps where you need to keep state synchronised with the DOM. It mostly runs clientside, but tools like Next can make it run serverside too.
