@@ -6,18 +6,17 @@ import Card from "../UI/Card";
 
 import ExpenseDate from "./ExpenseDate";
 
-// we have to do thigns inside our component function.
-// useState is a React hook. They start with the word "use" in their name, and must be called insdie the function.
+// we have to do things inside our component function.
+// useState is a React hook. They start with the word "use" in their name, and must be called inside the function.
 // Not in a nested functino, directly inside, with one exception.
 // useState requires a default state value.
 //  It requires us to give it an initial value which is used in case no update occurs.
 // it returns an array which has two elements --> access to the special variable which is different in different states, and it also returns a function which we can call to assign new values o the same variable.
 
 const ExpenseItem = (props) => {
-  // This is an event handling function. The event name starts with a capital letter. You should end with handler if you are creating an event handler.
-
   const [title, setTitle] = useState(props.title); //array destructuring.
 
+  // This is an event handling function. The event name starts with a capital letter. You should end with handler if you are creating an event handler.
   const clickHandler = () => {
     setTitle("new value for the const title!");
     // console.log(title); <- called as many times as the custom component is used to instatiate an object on screen.  But only once if useState is used for per-component-instance-basis.

@@ -25,9 +25,14 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (dataArrived) => {
+    console.log("data Arrived in App.js");
+    console.log(dataArrived);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
 
       <Expenses items={expenses} />
     </div>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  // Method 2:
   //   const [userInput, setUserInput] = useState({
   //     enteredTitle: "",
   //     enteredAmount: "",
@@ -15,7 +16,11 @@ const ExpenseForm = () => {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+
+    // console.log(props);
     // We need to update enteredAmount and enteredDate keys as well, to avoid dropping other keys.
+
+    // Method 2:
     // setUserInput({
     //   ...userInput, // using previous values of the
     //   enteredTitle: event.target.value, // OverWrites key value pairs.
@@ -28,16 +33,19 @@ const ExpenseForm = () => {
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    // Method 2:
     //     setUserInput({ ...userInput, enteredAmount: event.target.value });
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    // Method 2:
     //     setUserInput({ ...userInput, enteredDate: event.target.value });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
+    //  tp prevent the default behaviour of code, which is to reload the page and send a POST request by form submission.
 
     const expenseData = {
       title: enteredTitle,
@@ -45,7 +53,9 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    // console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+    // Here in above line, we passed data from Expense form to the parent component the NewExpense component.
     setEnteredTitle("");
     setEnteredDate("");
     setEnteredAmount("");
@@ -55,6 +65,7 @@ const ExpenseForm = () => {
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
+          {/* Title, Amount, Date and then a Button */}
           <label>Title</label>
           <input type="text" value={enteredTitle} onChange={titleChangeHandler} />
         </div>
