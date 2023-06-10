@@ -28,17 +28,19 @@ const ExpenseItem = (props) => {
   };
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      {/* when a component does not have any content in between the tags we can write it in above way */}
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        {/* when a component does not have any content in between the tags we can write it in above way */}
 
-      <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      {/* dont add paranthesis here. */}
-      <button onClick={clickHandler}>Change Title</button>
-    </Card>
+        <div className="expense-item__description">
+          <h2>{title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        {/* dont add paranthesis here. */}
+        <button onClick={clickHandler}>Change Title</button>
+      </Card>
+    </li>
   );
 };
 
