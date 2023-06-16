@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-// Initial Dummy Data stored in the variable called DUMMY EXPENSES
 const DUMMY_EXPENSES = [
   {
     id: "e1",
@@ -25,26 +24,20 @@ const DUMMY_EXPENSES = [
   },
 ];
 
-// Root component Function
 const App = () => {
-  // React State first use
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-  // Handles any new expense which are added to the DUMMY_EXPENSES LIST
-  // To find the source of this, search onAddExpense
   const addExpenseHandler = (dataArrived) => {
     setExpenses((prevData) => {
       return [dataArrived, ...prevData];
     });
-    // console.log("data Arrived in App.js");
+    console.log("data Arrived in App.js");
   };
 
   return (
     <div>
-      {/* The first component for adding new expense as our form */}
       <NewExpense onAddExpense={addExpenseHandler} />
 
-      {/* The second component for showing 1. Chart and 2. List */}
       <Expenses items={expenses} />
       {/* Passing the list of expenses for rendering. */}
     </div>

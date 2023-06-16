@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
-  // We created 3 states to handle the inputs given by user.
-  // We could do it without react as well, I think, but since it is a good way to learn react implementation, so we are doing it using react state.
-
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -50,22 +47,18 @@ const ExpenseForm = (props) => {
     event.preventDefault();
     //  tp prevent the default behaviour of code, which is to reload the page and send a POST request by form submission.
 
-    // console.log(expenseData);
-
-    // Here in above line, we passed data from Expense form to the parent component the NewExpense component.
-
-    // These 3 lines clear the input spaces in the form.
-    setEnteredTitle("");
-    setEnteredDate("");
-    setEnteredAmount("");
-
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
+    // console.log(expenseData);
     props.onSaveExpenseData(expenseData);
+    // Here in above line, we passed data from Expense form to the parent component the NewExpense component.
+    setEnteredTitle("");
+    setEnteredDate("");
+    setEnteredAmount("");
   };
 
   return (

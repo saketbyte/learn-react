@@ -3,12 +3,11 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  // OnSaveExpenseData is called in ExpenseForm file
-
-  //  This function is simple, it is just adding an id or key variable to the data accepted in the ExpenseForm.jsx and then passes it to the file where onAddExpense function is passed ie in root component in this case.
+  // OnSaveExpenseDataHandler is called in ExpenseForm file
   const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
+
       id: Math.random().toString(),
     };
 
