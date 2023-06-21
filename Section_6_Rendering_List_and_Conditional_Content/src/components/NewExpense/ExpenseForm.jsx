@@ -50,6 +50,12 @@ const ExpenseForm = (props) => {
     event.preventDefault();
     //  tp prevent the default behaviour of code, which is to reload the page and send a POST request by form submission.
 
+    const expenseData = {
+      title: enteredTitle,
+      amount: +enteredAmount,
+      date: new Date(enteredDate),
+    };
+
     // console.log(expenseData);
 
     // Here in above line, we passed data from Expense form to the parent component the NewExpense component.
@@ -59,11 +65,10 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
     setEnteredAmount("");
 
-    const expenseData = {
-      title: enteredTitle,
-      amount: +enteredAmount,
-      date: new Date(enteredDate),
-    };
+    //  So what are we exactly doing here?
+    //  We use the states function to get the value from DOM and then  set it in our new state variables through our onChange functions being called upon when an event is triggered.
+
+    // The function which is called when the form is submitted is different, tht function is creating a single JS object and storing or sending it to a conceptual database here, for furtehr calculations or uses.
 
     props.onSaveExpenseData(expenseData);
   };
