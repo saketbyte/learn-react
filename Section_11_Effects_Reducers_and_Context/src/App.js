@@ -8,6 +8,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    // To access the data which was stored in cache with the name isLoggedIn.
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
     if (storedUserLoggedInInformation === "1") {
@@ -18,7 +19,8 @@ function App() {
   const loginHandler = (email, password) => {
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
-    localStorage.setItem("isLoggedIn", "1");
+    // to store something in cache for the time being.
+    localStorage.setItem("isLoggedIn", "1"); // a token and an identifier string.
     setIsLoggedIn(true);
   };
 
