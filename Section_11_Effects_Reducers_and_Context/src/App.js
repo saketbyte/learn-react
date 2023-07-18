@@ -5,6 +5,9 @@ import Home from "./components/Home/Home";
 import MainHeader from "./components/MainHeader/MainHeader";
 
 function App() {
+  // We have lifted this state because we use this state everywhere in the app.
+  // 1. We sent it to the MainHeader component which then sends it to navigation component which then sends it to the NAV and then to the ul list. So this PROP DRILLING causes issue in any large app, that is solved by Context API. behind the scenes component wide state storage.
+  // 2. Buttons use log in or log out handlers which update the state based on click.
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
