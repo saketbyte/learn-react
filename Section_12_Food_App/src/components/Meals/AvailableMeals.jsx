@@ -1,7 +1,7 @@
 import DUMMY_MEALS from "./dummy-meals";
 import classes from "./AvailableMeals.module.css";
 import Card from "../UI/Card";
-import MealItem from "./MealItem.js/MealItem";
+import MealItem from "./MealItem/MealItem.jsx";
 
 const AvailableMeals = (props) => {
   const mealsList = DUMMY_MEALS.map((meal) => (
