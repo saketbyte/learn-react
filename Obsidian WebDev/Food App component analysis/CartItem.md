@@ -1,3 +1,6 @@
+---
+tag: foodapp
+---
 1. **Component Name**: 
 
 2. **Component Purpose**:
@@ -10,7 +13,7 @@
 
 
 6. **Child Components**:
-   * 
+   
    
 7. **Crucial Concepts in the file**:
 

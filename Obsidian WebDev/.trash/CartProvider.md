@@ -10,7 +10,7 @@
 
 
 6. **Child Components**:
-   
+   * [[Context.Provider]]   
    
 7. **Crucial Concepts in the file**:
 
