@@ -5,7 +5,7 @@ tag: foodapp
 
 2. **Component Purpose**: To render the Modal pop up and backdrop classes using portals.
 
-3. **Props being passed to it:** onClose function coming from App.js->Cart.js->this Modal file. [PropDrilling going on because the state is managed in the APP.JS file due to requirement of state lifting.]
+3. **Props being passed to it:** onClose function coming from App.js->Cart.js->this Modal file. [PropDrilling going on because the state is managed in the APP.JS file due to requirement of state lifting.] 
 
 4. **States created in it:** None
 
@@ -17,7 +17,7 @@ tag: foodapp
 6. **Child Components**:
    * [[Backdrop]]
    * [[ModalOverlay]]
-7. **Crucial Concepts in the file**:
+7. **Crucial Concepts in the file**: [All about Modal – layering order and creation.](https://chat.openai.com/share/ecbf5a03-0679-40a0-8a68-aff7664b411f)
 	1. To render the portal we go in the HTML file, and add another div with an id of overlay, where we will render other things.
 	2. In the Modal file we create the Backdrop and ModalOverlay as inline components in the same file.
 	3. Then we render Modal and backdrop side by side in the React JSX being returned in the Modal.js file.
